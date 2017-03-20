@@ -1,0 +1,20 @@
+As user, from within glad package:
+
+   glad$ ls 
+   CMakeLists.txt  example  glad  LICENSE  main.py  README.md  setup.py  utility
+
+As root, from within glad package:
+
+   glad# python -m main.py --generator=c --out-dir=/usr
+
+
+This will deposit glad.c into /usr/src
+
+   gcc -c -o glad.o glad.c -ldl
+   
+   ar q glad.a glad.o
+   
+   cp glad.a /usr/lib/libglad.a
+   
+This will provide a more normal -L/usr/lib -lglad environment.
+

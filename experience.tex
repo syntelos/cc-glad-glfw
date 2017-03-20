@@ -1,0 +1,65 @@
+\documentclass[12pt,twocolumn]{article}
+
+\begin{document}
+
+\title{A first experience with glad and glfw}
+
+\author{John D.H. Pritchard \thanks{jdp@syntelos.com}}
+
+\date{\today}
+
+\maketitle
+
+%\tableofcontents
+
+\begin{abstract}
+
+The {\tt glfw} looks nice, and it likes the {\tt glad}, so here we go.
+
+Here's some notes on the process of installing and using {\tt glad}
+and {\tt glfw}.
+
+\end{abstract}
+
+
+\section{Installing {\tt glad}}
+
+From {\tt github.com/ddav1dde/glad} the usual clone enters into python
+land.  The installation is a python program that looks into and
+characterizes the GL environment into its {\it even more portable (?)
+}  way.  
+
+As reviewed in {\tt ./INSTALL-GLAD.txt}, the process is friendly to a
+bit of experiementation as a regular, non-root, user.  And then it has
+need of some archiving.
+
+\section{Installing {\tt glfw}}
+
+Downloading the ZIP from {\tt www.glfw.org} gives you something
+usable.  The source repo is in the midst of things undesireable to
+someone else's workstation.  This {\tt configure}, {\tt make}, {\tt
+  make install} process is simple and straightforward.  
+
+The {\tt glfw} installation even produces a {\tt /usr/lib/pkgconfig}
+file.  However, the dependencies don't sort in {\tt pkg-config --libs}
+space.  (See {\tt Makefile}, {\it extrapolate as necessary}).
+
+\section{Hello Window}
+
+The {\tt main.cc} program is trivial.  It opens a window.
+
+The {\tt Makefile} includes libraries found via {\tt
+  github.com/derhass/HelloCube/blob/master/Makefile}.
+
+
+\section{Conclusion}
+
+Fun, but a bit time consuming.
+
+%\appendix
+
+%\section{Notes}
+
+
+
+\end{document}
